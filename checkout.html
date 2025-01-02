@@ -298,47 +298,7 @@
     </div>
 </div>
 
-<h3 class="mb-lg-4 mb-3">Payment details</h3>
-<div class="create-nft-box float-left w-100 position-relative">
-    <div class="form-group">
-        <label>Payment Method *</label>
-        <select class="form-control" id="paymentMethod" required>
-            <option value="" disabled selected>Select Payment Method</option>
-            <option value="stripe">Stripe</option>
-            <option value="paypal">PayPal</option>
-            <option value="wallet">Wallet Payment</option>
-        </select>
-    </div>
-    <div id="stripeDetails" class="payment-details hidden">
-        <h3>Stripe Payment</h3>
-        <div class="form-group">
-            <label>Card Number *</label>
-            <input type="text" class="form-control" placeholder="Card Number" required>
-        </div>
-        <div class="form-group">
-            <label>Expiry Date (MM/YY) *</label>
-            <input type="text" class="form-control" placeholder="MM/YY" required>
-        </div>
-        <div class="form-group">
-            <label>CVV *</label>
-            <input type="text" class="form-control" placeholder="CVV" required>
-        </div>
-    </div>
-    <div id="paypalDetails" class="payment-details hidden">
-        <h3>PayPal Payment</h3>
-        <div class="form-group">
-            <label>PayPal Email *</label>
-            <input type="email" class="form-control" placeholder="Your PayPal Email" required>
-        </div>
-    </div>
-    <div id="walletDetails" class="payment-details hidden">
-        <h3>Wallet Payment</h3>
-        <div class="form-group">
-            <label>Wallet ID/Address *</label>
-            <input type="text" class="form-control" placeholder="Your Wallet ID/Address" required>
-        </div>
-    </div>
-</div>
+
                 </div>
                 <div class="col-lg-4 col-md-5 col-12">
                     <h3 class="mb-lg-4 mb-3">Your order</h3>
@@ -369,18 +329,15 @@
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod2" value="directTransfer" disabled>
-                                <label class="form-check-label" for="paymentMethod2">Direct Bank Transfer</label>
-                                <p class="info-text">Make your payment directly into our bank account.</p>
+                                <label class="form-check-label" for="paymentMethod2">Stripe Payment</label>
+                                <p class="info-text">Make your payment using stripe</p>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod3" value="walletPayment" disabled>
-                                <label class="form-check-label" for="paymentMethod3">Wallet Payment</label>
-                                <p class="info-text">Make your payment directly into wallet.</p>
-                            </div>
+                            
                             <div id="total-cost">Total Cost: $0.00</div>
                         </div>
                         <div class="btn-outer">
-                            <button type="button" class="default-btn hover-effect" onclick="placeOrder()">Place an order</button>
+                            <button id="checkout" type="button" class="default-btn hover-effect">Make your payment</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -501,6 +458,33 @@
 <script src="assets/js/quantity.js"></script>
 <script src="assets/js/aos.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    var stripe = Stripe(
+        "pk_test_51QcUERBiTeEdaPhKqg9r31niJNybm72YiMtdV24I66AmSpdJLFZEUzMvyv9COcpEDFrUCbMlkCCtwPVLPeoz4WnH00neBUGh7H"
+    );
+
+    document.getElementById("checkout").addEventListener("click", function(){
+        stripe.redirectToCheckout({
+            lineItems: [
+                {
+                    price: "price_1QcUVfBiTeEdaPhKPXCaY5bl",
+                    quantity: 1,
+                },
+            ],
+            mode: "subscription",
+            successUrl: "https://www.google.com/",  // Corrected here
+            cancelUrl: "https://www.twitter.com/",
+        })
+        .then(function(result){
+            if (result.error) {
+                console.error(result.error.message);
+            }
+        });
+    });
+</script>
+
 <script>
     AOS.init();
 </script>

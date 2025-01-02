@@ -44,8 +44,7 @@ $(window).on("load resize", function() {
   
 });
 
-//Search Icon//
-
+// Search Icon
 document.getElementById('search-icon').addEventListener('click', function(event) {
   event.preventDefault(); // Prevent default anchor behavior
   const searchInputContainer = document.getElementById('search-input-container');
@@ -58,13 +57,14 @@ document.getElementById('search-form').addEventListener('submit', function(event
   const query = document.getElementById('search-input').value.toLowerCase();
   const resultsContainer = document.getElementById('search-results');
   resultsContainer.innerHTML = ''; // Clear previous results
+  resultsContainer.style.display = 'block'; // Show results container
 
   // Example event data (replace with actual data)
   const events = [
       { name: 'Business Conference', link: 'Building Sustainable.html' },
       { name: 'Tech Conference', link: 'Tech-Event.html' },
       { name: 'Festival Event ', link: 'Content Creators Summit 2024.html' },
-      { name: 'Free Event',  link: 'Free-event.html' },
+      { name: 'Free Event', link: 'Free-event.html' },
       { name: 'Parenting Seminars', link: 'Parenting Seminars.html' },
       { name: 'Healthcare Conferences', link: 'Healthcare Conferences.html' },
       { name: 'Educational Webinars', link: 'Educational Webinars.html' },

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Canceled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff5f5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #dc3545;
+            margin-bottom: 16px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .icon {
+            font-size: 5em;
+            color: #dc3545;
+            animation: shake 0.5s infinite;
+        }
+        .home-button {
+            padding: 12px 24px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .home-button:hover {
+            background-color: #c82333;
+        }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px); }
+            25% { transform: translate(-1px, -2px); }
+            50% { transform: translate(-3px, 0); }
+            75% { transform: translate(3px, 2px); }
+            100% { transform: translate(1px, 1px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-times-circle icon"></i>
+        <h1>Payment Canceled</h1>
+        <p>Your payment was not completed. Please try again later.</p>
+        <a class="home-button" href="index.html">Return to Home</a>
+    </div>
+</body>
+</html>

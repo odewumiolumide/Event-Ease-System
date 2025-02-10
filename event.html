@@ -63,16 +63,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown3" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                HOME
+                                Dashboard
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                                <a class="dropdown-item" href="index.html">HOME</a>
+                                <a class="dropdown-item" href="index.html">Dashboard</a>
                                 
                             </div>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link p-0" href="about.html">ABOUT</a>
+                            <a class="nav-link p-0" href="shop.html">Explore Events</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle p-0 " href="#" id="navbarDropdown5" role="button"
@@ -81,25 +81,25 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
                                 
-                                <a class="dropdown-item" href="faq.html">Faq</a>
-                                <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                                 <a class="dropdown-item" href="shop.html">Shop</a>
                                 <a class="dropdown-item " href="cart.html">Cart</a>
                                 <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                
+                               
                             </div>
                         </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link p-0" href="pricing.html">PRICING</a>
-                        </li>
                         
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown4" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Resources
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                                <a class="dropdown-item" href="single-blog.html">Blogs</a>
+                                <a class="dropdown-item" href="single-blog.html">Blog</a>
+                                <a class="dropdown-item" href="single-blog.html">Guides</a>
+                                <a class="dropdown-item" href="single-blog.html">Find your ticket</a>
                                 
                                                             
                             </div>
@@ -110,7 +110,7 @@
                     </ul>
                     <div class="header-contact d-flex align-items-center">
                         <div class="lets-talk-btn">
-                            <a href="http://127.0.0.1:5500/Event%20webpage/Dashboard/authentication/signin.html"> Create Event <i class="fas fa-arrow-right"></i></a>
+                            <a href="/Dashboard/authentication/signin.html"> Create Event <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
     <section class="sub-banner-main-section event-banner-section w-100 float-left">
         <div class="container">
             <div class="sub-banner-inner-con">
-                <h1 data-aos="fade-up" data-aos-duration="700">CONFX EVENTS</h1>
+                <h1 data-aos="fade-up" data-aos-duration="700">EVENTS</h1>
                 <p data-aos="fade-up" data-aos-duration="700">Inspiring Talks, Meet the Best Product People Around the World, <br> and Party Together After the Event!</p>
                 <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="700">
                     <ol class="breadcrumb d-inline-block mb-0">
@@ -291,7 +291,7 @@
         </div>
     </section>
     <!-- EVENT SECTION END -->
-    <!-- SPEAKERS SECTION START -->
+    <!-- EVENT PAGE SECTION START -->
     <section class="speakers-main-section w-100 float-left padding-top padding-bottom">
         <div class="container-fluid">
             <div class="generic-title text-center">
@@ -300,107 +300,349 @@
                 <p data-aos="fade-up" data-aos-duration="700">8+ Inspiring Talks, Meet the Best Product People Around the World, and <br> Party Together After the
                     Event!</p>
             </div>
+
             <div class="speakers-inner-sec" data-aos="fade-up" data-aos-duration="700">
+        
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img1.jpg" alt="speakers-img1">
+                        <img src="assets/images/banner-two-girls-img.jpg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn1">Declan Heyes <i class="fas fa-angle-up"></i></button>
+                        <button class="showBtn1">Global Business Conference <i class="fas fa-angle-up"></i></button>
                         <div class="staus-con data1">
-                            <span>CEO - ConfX</span>
+                            <span>Fri, Mar 15 • 10:00 AM</span>
+                            <br>
+                            <span>International Conference Center</span>
+                            <br>
+                            <p>$250</p>
+                            <span>15k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img2.jpg" alt="speakers-img2">
+                        <img src="assets/images/banner-man-and-women-img.jpg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn2">Stella Hindley <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data2">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Creative Writing Workshop <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Sat, Apr 20 • 1:00 PM</span>
+                            <br>
+                            <span>City Library Auditorium</span>
+                            <br>
+                            <p>$50</p>
+                            <span>2.5k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img3.jpg" alt="speakers-img3">
+                        <img src="assets/images/workshop 1.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn3">Jackson Allardyce <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data3">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Leadership Skills Workshop <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Mon, Aug 18 • 9:00 AM</span>
+                            <br>
+                            <span>Business Center Hall A</span>
+                            <br>
+                            <p>$100</p>
+                            <span>3k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img4.jpg" alt="speakers-img4">
+                        <img src="assets/images/DR.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn4">Kiara Simons <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data4">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Digital Marketing Webinar <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Thu, Jun 5 • 3:00 PM</span>
+                            <br>
+                            <span>Online Event</span>
+                            <br>
+                            <p>Free</p>
+                            <span>5k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img5.jpg" alt="speakers-img5">
+                        <img src="assets/images/Annual Music Festival ii.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn5">Eden Hoff <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data5">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Annual Music Festival <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Sat, Jul 12 • 12:00 PM</span>
+                            <br>
+                            <span>Central Park</span>
+                            <br>
+                            <p>$75</p>
+                            <span>20k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img6.jpg" alt="speakers-img6">
+                        <img src="assets/images/Tech Networking Night.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn6">Jesse Beeby <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data6">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Tech Networking Night <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Wed, May 10 • 6:00 PM</span>
+                            <br>
+                            <span>Downtown Tech Hub</span>
+                            <br>
+                            <p>$30</p>
+                            <span>8k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+
+            <!-- Modal -->
+            <div id="shareModal" class="modal">
+                <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Share This Product</h2>
+                <p>Select a platform to share:</p>
+                <div class="platform-icons">
+                <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <br>
+                <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                <button onclick="copyURL()">Copy URL</button>
+                </div>
+              </div>
+
+
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img7.jpg" alt="speakers-img7">
+                        <img src="assets/images/culture.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn7">Matthew Grey-Smith <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data7">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Art & Culture Festival <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Sun, Oct 6 • 11:00 AM</span>
+                            <br>
+                            <span>City Art Gallery</span>
+                            <br>
+                            <p>$29</p>
+                            <span>18k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Share This Product</h2>
+                    <p>Select a platform to share:</p>
+                    <div class="platform-icons">
+                    <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <br>
+                    <input type="text" id="productURL" value="http://127.0.0.1:5500/Tech-Event.html" readonly>
+                    <button onclick="copyURL()">Copy URL</button>
+                    </div>
+                  </div>
+
+
+                
                 <div class="speaker-box position-relative">
-                    <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="download-btn" onclick="openModal()"><i class="fas fa-download"></i></a>
                     <figure class="mb-0">
-                        <img src="assets/images/speakers-img1.jpg" alt="speakers-img1">
+                        <img src="assets/images/Startup Networking Gala.jpeg" alt="speakers-img1">
                     </figure>
                     <div class="speaker-status">
-                        <button class="showBtn8">Declan Heyes <i class="fas fa-angle-up"></i></button>
-                        <div class="staus-con data8">
-                            <span>CEO - ConfX</span>
+                        <button class="showBtn1">Startup Networking Gala <i class="fas fa-angle-up"></i></button>
+                        <div class="staus-con data1">
+                            <span>Tue, Sep 24 • 7:00 PM</span>
+                            <br>
+                            <span>Luxury Hotel Ballroom</span>
+                            <br>
+                            <p>$150</p>
+                            <span>10k Followers</span>
+                            <br>
+                            <br>
+                            
+                                <a href="Tech-Event.html" style="font-size: 1rem; color: #001;">View</a>
+                            
                         </div>
                     </div>
+                </div>
+
+                  <!-- Modal -->
+                <div id="shareModal" class="modal">
+                  <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <h2>Share This Product</h2>
+                  <p>Select a platform to share:</p>
+                  <div class="platform-icons">
+                  <a href="https://www.facebook.com/login" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.twitter.com/login" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.linkedin.com/login" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.email.com/login" title="Share via Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+                  <br>
+                  <input type="text" id="productURL" value="http://127.0.0.1:5500/index.html#" readonly>
+                  <button onclick="copyURL()">Copy URL</button>
+                  </div>
                 </div>
             </div>
-            <div class="generic-btn text-center" data-aos="fade-up" data-aos-duration="700">
-                <a href="speaker.html">VIEW ALL SPEAKERS <i class="fas fa-arrow-right"></i></a>
-            </div>
+            
         </div>
     </section>
     <!-- SPEAKERS SECTION END -->
@@ -486,136 +728,8 @@
         </div>
     </section>
     <!-- FAQ SECTION END -->
-    <!-- TESTIMONAIL SECTION START -->
-    <section class="testimonial-main-section w-100 float-left padding-top padding-bottom">
-        <div class="container">
-            <div id="owl-carouseltwo" class="owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="700">
-                <div class="item">
-                    <div class="testimonial-inner-con">
-                        <div class="testimonial-img-con">
-                            <div class="testimonial-img-outer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/testimonial-left-img.jpg" alt="testimonial-left-img">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="testimonial-right-con">
-                            <div class="generic-title">
-                                <span class="small-text">EVENT REVIEWS</span>
-                                <h2>Testimonials</h2>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolorem agna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                                maecenas accumsan lacus vel facilisis. </p>
-                            <div class="reviewer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/reviewer-img.png" alt="reviewer-img">
-                                </figure>
-                                <div class="reviewer-details">
-                                    <span class="d-block">Leon Drescher</span>
-                                    <small class="d-block">CEO - Company</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-inner-con">
-                        <div class="testimonial-img-con">
-                            <div class="testimonial-img-outer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/testimonial-left-img.jpg" alt="testimonial-left-img">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="testimonial-right-con">
-                            <div class="generic-title">
-                                <span class="small-text">EVENT REVIEWS</span>
-                                <h2>Testimonials</h2>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolorem agna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                                maecenas accumsan lacus vel facilisis. </p>
-                            <div class="reviewer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/reviewer-img.png" alt="reviewer-img">
-                                </figure>
-                                <div class="reviewer-details">
-                                    <span class="d-block">Leon Drescher</span>
-                                    <small class="d-block">CEO - Company</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="testimonial-inner-con">
-                        <div class="testimonial-img-con">
-                            <div class="testimonial-img-outer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/testimonial-left-img.jpg" alt="testimonial-left-img">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="testimonial-right-con">
-                            <div class="generic-title">
-                                <span class="small-text">EVENT REVIEWS</span>
-                                <h2>Testimonials</h2>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolorem agna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
-                                maecenas accumsan lacus vel facilisis. </p>
-                            <div class="reviewer-con">
-                                <figure class="mb-0">
-                                    <img src="assets/images/reviewer-img.png" alt="reviewer-img">
-                                </figure>
-                                <div class="reviewer-details">
-                                    <span class="d-block">Leon Drescher</span>
-                                    <small class="d-block">CEO - Company</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- TESTIMONAIL SECTION END -->
-    <!-- SPONSERS SECTION START -->
-    <div class="sponsers-main-section about-sponsers w-100 float-left">
-        <div class="container">
-            <div class="sponsers-companies">
-                <ul class="list-unstyled mb-0" data-aos="fade-up" data-aos-duration="700">
-                    <li>
-                        <figure class="mb-0">
-                            <img src="assets/images/sponsers-logo1.png" alt="sponsers-logo1">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="mb-0">
-                            <img src="assets/images/sponsers-logo2.png" alt="sponsers-logo2">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="mb-0">
-                            <img src="assets/images/sponsers-logo3.png" alt="sponsers-logo3">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="mb-0">
-                            <img src="assets/images/sponsers-logo4.png" alt="sponsers-logo4">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="mb-0">
-                            <img src="assets/images/sponsers-logo5.png" alt="sponsers-logo5">
-                        </figure>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- SPONSERS SECTION END -->
+    
+    
     <!-- REGISTRATION SECTION START -->
     <section class="registration-main-section w-100 float-left">
         <div class="container">

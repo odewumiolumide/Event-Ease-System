@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Checkout</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h1>Checkout Page</h1>
+    <button id="checkout">Make your payment</button>
+
+    <script>
+        var stripe = Stripe('YOUR_PUBLIC_KEY'); // Replace with your actual Stripe public key
+
+        document.getElementById("checkout").addEventListener("click", async function() {
+            const lineItems = [
+                { price: 'price_1I...', quantity: 1 }, // Replace with your actual price ID
+            ];
+
+            const response = await fetch('/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ lineItems }),
+            });
+
+            const session = await response.json();
+
+            if (session.id) {
+                stripe.redirectToCheckout({ sessionId: session.id });
+            } else {
+                console.error('Failed to create checkout session:', session);
+            }
+        });
+    </script>
+</body>
+</html>

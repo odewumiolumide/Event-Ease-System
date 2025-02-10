@@ -143,7 +143,7 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a class="navbar-brand" href="index.html">
                 <figure class="mb-0">
-                    <img src="assets/images/logo.png" alt="logo">
+                    <img src="assets/images/index3-header-logo.png" alt="logo">
                 </figure>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
@@ -158,16 +158,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown3" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            HOME
+                            Dashboard
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a class="dropdown-item" href="index.html">HOME</a>
+                            <a class="dropdown-item" href="index.html">Dashboard</a>
                             
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link p-0" href="about.html">ABOUT</a>
+                        <a class="nav-link p-0" href="shop.html">Explore Events</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0 " href="#" id="navbarDropdown5" role="button"
@@ -176,17 +176,13 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown5">
                             
-                            <a class="dropdown-item" href="faq.html">Faq</a>
-                            <a class="dropdown-item" href="testimonials.html">Testimonials</a>
                             <a class="dropdown-item" href="shop.html">Shop</a>
                             <a class="dropdown-item " href="cart.html">Cart</a>
                             <a class="dropdown-item" href="checkout.html">Checkout</a>
                         </div>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link p-0" href="pricing.html">PRICING</a>
-                    </li>
+                    
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown4" role="button"
@@ -194,7 +190,10 @@
                             Resources
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
-                            <a class="dropdown-item" href="single-blog.html">Blogs</a>
+                            <a class="dropdown-item" href="single-blog.html">Blog</a>
+                            <a class="dropdown-item" href="single-blog.html">Guides</a>
+                            <a class="dropdown-item" href="single-blog.html">Find your ticket</a>
+                            
                                                         
                         </div>
                     </li>
@@ -204,7 +203,7 @@
                 </ul>
                 <div class="header-contact d-flex align-items-center">
                     <div class="lets-talk-btn">
-                        <a href="http://127.0.0.1:5500/Event%20webpage/Dashboard/authentication/signin.html"> Create Event <i class="fas fa-arrow-right"></i></a>
+                        <a href="/Dashboard/authentication/signin.html"> Create Event <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -336,8 +335,7 @@
                             <div id="total-cost">Total Cost: $0.00</div>
                         </div>
                         <div class="btn-outer">
-                            <button id="checkout" type="button" class="default-btn hover-effect">Make your payment</button>
-                            
+                            <button id="checkout" type="button" class="default-btn hover-effect" disabled>Make your payment</button>
                         </div>
                     </div>
                 </div>
@@ -474,8 +472,8 @@
                 },
             ],
             mode: "subscription",
-            successUrl: "https://www.google.com/",  // Corrected here
-            cancelUrl: "https://www.twitter.com/",
+            successUrl: "http://127.0.0.1:5500/sucess.html",
+            cancelUrl: "http://127.0.0.1:5500/cancel.html",
         })
         .then(function(result){
             if (result.error) {
@@ -585,37 +583,83 @@
 </script>
 
 <script>
-    document.getElementById('paymentMethod').addEventListener('change', function() {
-        const selectedMethod = this.value;
-        // Hide all payment details initially
-        document.getElementById('stripeDetails').classList.add('hidden');
-        document.getElementById('paypalDetails').classList.add('hidden');
-        document.getElementById('walletDetails').classList.add('hidden');
 
-        // Show the selected payment details
-        if (selectedMethod === 'stripe') {
-            document.getElementById('stripeDetails').classList.remove('hidden');
-        } else if (selectedMethod === 'paypal') {
-            document.getElementById('paypalDetails').classList.remove('hidden');
-        } else if (selectedMethod === 'wallet') {
-            document.getElementById('walletDetails').classList.remove('hidden');
-        }
+   // function checkFormCompletion() {
+   //     const requiredInputs = document.querySelectorAll('.form-control[required]');
+     //   const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+       // document.getElementById('submitOrderBtn').disabled = !allFilled;
+    //}
 
-        // Enable the submit button if all required fields are filled
-        checkFormCompletion();
+    //function submitOrder() {
+      //  alert("Order placed successfully!");
+        // Here you can add AJAX request to submit the order to your server
+    //}
+</script>
+
+<script>
+    let cart = 1; // Assume the cart starts with 1 item initially
+
+    const freeOption = document.getElementById('paymentMethod1');
+    const paidOption = document.getElementById('paymentMethod2'); // Paid option
+    const checkoutButton = document.getElementById('checkout');
+
+    // Event listeners for payment method selection
+    freeOption.addEventListener('change', updateButtonState);
+    paidOption.addEventListener('change', updateButtonState);
+
+    // Add event listeners to form inputs to enable button when filled
+    const requiredInputs = document.querySelectorAll('.form-control[required]');
+    requiredInputs.forEach(input => {
+        input.addEventListener('input', checkFormCompletion);
     });
 
-    function checkFormCompletion() {
-        const requiredInputs = document.querySelectorAll('.form-control[required]');
-        const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
-        document.getElementById('submitOrderBtn').disabled = !allFilled;
+    function updateButtonState() {
+        checkoutButton.innerText = freeOption.checked ? "Register Now" : "Make your payment";
+        checkFormCompletion(); // Check if the form is complete
     }
 
-    function submitOrder() {
-        alert("Order placed successfully!");
-        // Here you can add AJAX request to submit the order to your server
+    function checkFormCompletion() {
+        const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+        const eventTypeSelected = freeOption.checked || paidOption.checked;
+        checkoutButton.disabled = !(allFilled && eventTypeSelected);
     }
+
+    checkoutButton.addEventListener('click', function() {
+        if (freeOption.checked) {
+            const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+            if (allFilled) {
+                alert("Order placed successfully! A confirmation email has been sent to your email.");
+                cart = 0; // Reset the cart to 0
+                console.log("Cart after free registration:", cart); // Debugging log
+                window.location.href = "https://mail.google.com/";
+            } else {
+                alert("Please fill in all required fields correctly before registering.");
+            }
+        } else if (paidOption.checked) {
+            stripe.redirectToCheckout({
+                lineItems: [{ price: "price_1QcUVfBiTeEdaPhKPXCaY5bl", quantity: 1 }],
+                mode: "payment",
+                successUrl: "http://127.0.0.1:5500/success.html",
+                cancelUrl: "http://127.0.0.1:5500/cancel.html",
+            }).then(function(result) {
+                if (result.error) {
+                    alert('Payment was unsuccessful: ' + result.error.message);
+                }
+            });
+        }
+    });
+
+    // Check for successful payment on load of the success page
+    window.onload = function() {
+        if (window.location.href.includes("success.html")) {
+            cart = 0; // Reset the cart to 0 upon returning from the success page
+            console.log("Cart after returning from success page:", cart); // Debugging log
+        }
+    };
+
 </script>
+
+
 </body>
 
 <!-- Mirrored from html.designingmedia.com/confx/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 28 Oct 2024 14:16:40 GMT -->
